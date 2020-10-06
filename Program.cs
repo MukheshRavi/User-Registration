@@ -23,6 +23,21 @@ namespace UserRegistration
                 goto firstname;
             }
 
+        lastname: Console.WriteLine("Enter last Name : start with capital and min 3 characters");
+            string Name = Console.ReadLine();
+            String patterns = "^[A-Z][a-zA-Z0-9]{2}";
+            Regex regexs = new Regex(patterns);
+            if (regexs.IsMatch(Name))
+                Console.WriteLine("valid username entered");
+            else
+            {
+                Console.WriteLine("Not a valid user name");
+                goto lastname;
+            }
+
+
+
+
         }
     }
 }
