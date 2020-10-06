@@ -14,6 +14,7 @@ namespace UserRegistration
             user.validateFrstName();
             user.validateLastName();
             user.validateEmail();
+            user.validatePhoneNumber();
 
 
 
