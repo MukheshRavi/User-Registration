@@ -10,30 +10,10 @@ namespace UserRegistration
        public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to user registration problem");
-        firstname: Console.WriteLine("Enter First Name : start with capital and min 3 characters");
-            string frstName = Console.ReadLine();
-            String pattern = "^[A-Z][a-zA-Z0-9]{2}";
-            Regex regex = new Regex(pattern);
-
-            if (regex.IsMatch(frstName))
-                Console.WriteLine("valid username entered");
-            else
-            {
-                Console.WriteLine("Not a valid user name");
-                goto firstname;
-            }
-
-        lastname: Console.WriteLine("Enter last Name : start with capital and min 3 characters");
-            string Name = Console.ReadLine();
-            String patterns = "^[A-Z][a-zA-Z0-9]{2}";
-            Regex regexs = new Regex(patterns);
-            if (regexs.IsMatch(Name))
-                Console.WriteLine("valid username entered");
-            else
-            {
-                Console.WriteLine("Not a valid user name");
-                goto lastname;
-            }
+            User user = new User();
+            user.validateFrstName();
+            user.validateLastName();
+            user.validateEmail();
 
 
 
