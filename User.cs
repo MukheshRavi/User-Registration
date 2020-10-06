@@ -53,8 +53,28 @@ namespace UserRegistration
                 goto Email;
             }
         }
+
+        public void  validatePhoneNumber()
+        {
+        Phone: Console.WriteLine("Enter Phone Number");
+            string phnNo = Console.ReadLine();
+            String phnPattern = "^[9][1][ ][6-9]([0-9]{9})$";
+            Regex regex = new Regex(phnPattern);
+            if (regex.IsMatch(phnNo))
+                Console.WriteLine("valid Phone Number entered");
+            else
+            {
+                Console.WriteLine("Not a valid Phone Number");
+                goto Phone;
+            }
+        
+
+    }
+
+
+
     }
 
 
     }
-}
+
