@@ -70,6 +70,22 @@ namespace UserRegistration
         
 
     }
+        public  void validatePassword()
+        {
+        Password: Console.WriteLine("Enter Password");
+            string password = Console.ReadLine();
+            String passwordPattern = "[a-zA-z0-9]{8}";
+            Regex regex = new Regex(passwordPattern);
+            if (regex.IsMatch(password))
+                Console.WriteLine("valid Password entered");
+            else
+            {
+                Console.WriteLine("Not a valid Password");
+                goto Password;
+            }
+
+        }
+
 
 
 

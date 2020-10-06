@@ -15,7 +15,7 @@ namespace UserRegistration
             user.validateLastName();
             user.validateEmail();
             user.validatePhoneNumber();
-
+            user.validatePassword();
 
 
 
