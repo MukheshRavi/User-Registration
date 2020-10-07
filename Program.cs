@@ -16,6 +16,7 @@ namespace UserRegistration
             user.validateEmail();
             user.validatePhoneNumber();
             user.validatePassword();
+            user.ValidateSampleEmail();
 
 
 
