@@ -82,8 +82,10 @@ namespace UserRegistration
     }
         public static bool ValidatePassword(string password)
         {
+
      //   Password: Console.WriteLine("Enter Password");
        //     string password = Console.ReadLine();
+        
             String passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$";
             Regex regex = new Regex(passwordPattern);
             if (regex.IsMatch(password))
