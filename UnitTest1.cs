@@ -5,12 +5,15 @@ namespace UserMsTest
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestName()
+        [DataTestMethod]
+        [DataRow(true,"Mukesh")]
+        [DataRow(true, "Attuluri")]
+
+        public void TestName(bool expected,string name )
         {//Arrange
-            bool expected = true;
+            
             //Act
-            bool actual = User.ValidateName("Muk");
+            bool actual = User.ValidateName(name);
             //Assert
             Assert.AreEqual(expected, actual);
 
@@ -31,7 +34,7 @@ namespace UserMsTest
         {//Arrange
             bool expected = true;
             //Act
-            bool actual = User.ValidatePhoneNumber("8978496720");
+            bool actual = User.ValidatePhoneNumber("91 8978496720");
             //Assert
             Assert.AreEqual(expected, actual);
         }

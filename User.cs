@@ -19,26 +19,13 @@ namespace UserRegistration
             }
             else
             {
-                Console.WriteLine("Not a valid user name");
-                return false;
+                
+                throw new InvalidUserNameException("Invalid user name entered");
+               
                
             }
         }
 
-      /*  public void validateLastName(lstName)
-        {
-        lastname: Console.WriteLine("Enter last Name : start with capital and min 3 characters");
-            string lstName = Console.ReadLine();
-            String pattern = "^[A-Z][a-zA-Z0-9]{2}";
-            Regex regex = new Regex(pattern);
-            if (regex.IsMatch(lstName))
-                Console.WriteLine("valid username entered");
-            else
-            {
-                Console.WriteLine("Not a valid user name");
-                goto lastname;
-            }
-        }*/
 
         public static bool ValidateEmail(string email)
         {
@@ -54,9 +41,8 @@ namespace UserRegistration
             }
             else
             {
-                Console.WriteLine("Not a valid email");
-                return false;
-                //goto Email;
+                throw new InvalidEmailException("Invalid Email entered");
+
             }
         }
 
@@ -73,9 +59,8 @@ namespace UserRegistration
             }
             else
             {
-                Console.WriteLine("Not a valid Phone Number");
-                return false;
-                // goto Phone;
+                throw new InvalidPhnNoException("Invalid Phone Number entered");
+
             }
         
 
@@ -95,9 +80,7 @@ namespace UserRegistration
             }
             else
             {
-                Console.WriteLine("Not a valid Password");
-                return false;
-                // goto Password;
+                throw new InvalidPasswordException("Invalid Password entered");
             }
 
         }
