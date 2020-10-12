@@ -11,12 +11,12 @@ namespace UserRegistration
         {
             Console.WriteLine("Welcome to user registration problem");
             User user = new User();
-            user.validateFrstName();
-            user.validateLastName();
-            user.validateEmail();
-            user.validatePhoneNumber();
-            user.validatePassword();
-            user.ValidateSampleEmail();
+          //  user.validateFrstName();
+          //  user.validateLastName();
+            //user.validateEmail();
+           // user.validatePhoneNumber();
+           // user.validatePassword();
+           // user.ValidateSampleEmail();
 
 
 
