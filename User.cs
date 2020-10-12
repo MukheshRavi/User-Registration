@@ -4,26 +4,28 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    class User
+   public class User
     {
-
-        public void validateFrstName()
+        public static bool ValidateName(string frstName)
         {
-        firstname: Console.WriteLine("Enter First Name : start with capital and min 3 characters");
-            string frstName = Console.ReadLine();
+         //Console.WriteLine("Enter First Name : start with capital and min 3 characters");
+           // string frstName = Console.ReadLine();
             String pattern = "^[A-Z][a-zA-Z0-9]{2}";
             Regex regex = new Regex(pattern);
 
             if (regex.IsMatch(frstName))
-                Console.WriteLine("valid username entered");
+        {        Console.WriteLine("valid username entered");
+              return true;
+            }
             else
             {
                 Console.WriteLine("Not a valid user name");
-                goto firstname;
+                return false;
+               
             }
         }
 
-        public void validateLastName()
+      /*  public void validateLastName(lstName)
         {
         lastname: Console.WriteLine("Enter last Name : start with capital and min 3 characters");
             string lstName = Console.ReadLine();
@@ -36,52 +38,64 @@ namespace UserRegistration
                 Console.WriteLine("Not a valid user name");
                 goto lastname;
             }
-        }
+        }*/
 
-        public void validateEmail()
+        public static bool ValidateEmail(string email)
         {
             
-        Email: Console.WriteLine("Enter mail id");
-            string email = Console.ReadLine();
+       // Email: Console.WriteLine("Enter mail id");
+         //   string email = Console.ReadLine();
             String emailPattern = "[a-zA-Z0-9]+([+-_.][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]+([.][a-zA-Z]{2})*$";
             Regex regex = new Regex(emailPattern);
             if (regex.IsMatch(email))
+            {
                 Console.WriteLine("valid email entered");
+                return true;
+            }
             else
             {
                 Console.WriteLine("Not a valid email");
-                goto Email;
+                return false;
+                //goto Email;
             }
         }
 
-        public void  validatePhoneNumber()
+        public static bool  ValidatePhoneNumber(string phnNo)
         {
-        Phone: Console.WriteLine("Enter Phone Number");
-            string phnNo = Console.ReadLine();
+       // Phone: Console.WriteLine("Enter Phone Number");
+         //   string phnNo = Console.ReadLine();
             String phnPattern = "^[9][1][ ][6-9]([0-9]{9})$";
             Regex regex = new Regex(phnPattern);
             if (regex.IsMatch(phnNo))
+            {
                 Console.WriteLine("valid Phone Number entered");
+                return true;
+            }
             else
             {
                 Console.WriteLine("Not a valid Phone Number");
-                goto Phone;
+                return false;
+                // goto Phone;
             }
         
 
     }
-        public  void validatePassword()
+        public static bool ValidatePassword(string password)
         {
-        Password: Console.WriteLine("Enter Password");
-            string password = Console.ReadLine();
-            String passwordPattern = "^(?=.*[A-Z])[*.!@$%^&(){}[]:;<>,.?/~_+-=|](?=.*[0-9]).{8,}$";
+     //   Password: Console.WriteLine("Enter Password");
+       //     string password = Console.ReadLine();
+            String passwordPattern = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$";
             Regex regex = new Regex(passwordPattern);
             if (regex.IsMatch(password))
+            {
                 Console.WriteLine("valid Password entered");
+                return true;
+            }
             else
             {
                 Console.WriteLine("Not a valid Password");
-                goto Password;
+                return false;
+                // goto Password;
             }
 
         }
